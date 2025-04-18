@@ -156,6 +156,20 @@ export default function AppointmentForm({
       <Text style={styles.subtitle}>Los campos con * son obligatorios</Text>
 
       <View style={styles.formGroup}>
+        <Text style={styles.label}>Nombre del turno *</Text>
+        <TextInput
+          style={[
+            styles.input,
+            errors.name && { borderColor: "red", borderWidth: 1 },
+          ]}
+          value={name}
+          onChangeText={setName}
+          placeholder="Ingresa la especialidad"
+        />
+        {errors.name && <Text style={styles.errorText}>{errors.name}</Text>}
+      </View>
+
+      <View style={styles.formGroup}>
         <Text style={styles.label}>Fecha *</Text>
         <TouchableOpacity
           style={styles.datePickerButton}
@@ -200,20 +214,6 @@ export default function AppointmentForm({
         {errors.location && (
           <Text style={styles.errorText}>{errors.location}</Text>
         )}
-      </View>
-
-      <View style={styles.formGroup}>
-        <Text style={styles.label}>Nombre del turno *</Text>
-        <TextInput
-          style={[
-            styles.input,
-            errors.name && { borderColor: "red", borderWidth: 1 },
-          ]}
-          value={name}
-          onChangeText={setName}
-          placeholder="Ingresa la especialidad"
-        />
-        {errors.name && <Text style={styles.errorText}>{errors.name}</Text>}
       </View>
 
       <View style={styles.formGroup}>
