@@ -24,6 +24,7 @@ export default function CreateAppointment() {
 
         <AppointmentForm
           onSubmit={(appointment: Omit<Appointment, "id">) => {
+            // TODO: Should persist a new appointment in db (id is required).
             console.log("To create: ", appointment);
           }}
         />
