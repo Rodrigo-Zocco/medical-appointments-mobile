@@ -35,12 +35,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   red: {
-    backgroundColor: "#EF5350",
+    backgroundColor: "red",
   },
   green: {
-    backgroundColor: "#016e00",
+    backgroundColor: "green",
   },
   blue: {
-    backgroundColor: "#032afe",
+    backgroundColor: "blue",
   },
 });
