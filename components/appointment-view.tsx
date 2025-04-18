@@ -28,7 +28,7 @@ export default function AppointmentView({
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView>
       <View style={styles.card}>
         <View style={styles.header}>
           <Text style={styles.headerText}>{appointment.name}</Text>
@@ -85,10 +85,6 @@ export default function AppointmentView({
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
   title: {
     fontSize: 28,
     fontWeight: "bold",
