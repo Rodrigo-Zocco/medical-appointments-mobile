@@ -23,9 +23,12 @@ export default function CreateAppointment() {
         </View>
 
         <AppointmentForm
-          onSubmit={(appointment: Omit<Appointment, "id">) => {
+          onSubmit={async (appointment: Omit<Appointment, "id">) => {
             // TODO: Should persist a new appointment in db (id is required).
             console.log("To create: ", appointment);
+
+            await new Promise((r) => setTimeout(r, 1500));
+            router.push("/");
           }}
         />
       </ScrollView>
