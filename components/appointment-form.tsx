@@ -323,7 +323,7 @@ export default function AppointmentForm({
 
             <View style={styles.pickerContainer}>
               <ScrollView style={styles.pickerColumn}>
-                <Text style={styles.pickerHeader}>Hour</Text>
+                <Text style={styles.pickerHeader}>Hora</Text>
                 {hours.map((hour) => (
                   <PickerItem
                     key={`hour-${hour}`}
@@ -335,7 +335,7 @@ export default function AppointmentForm({
               </ScrollView>
 
               <ScrollView style={styles.pickerColumn}>
-                <Text style={styles.pickerHeader}>Minute</Text>
+                <Text style={styles.pickerHeader}>Minutos</Text>
                 {minutes.map((minute) => (
                   <PickerItem
                     key={`minute-${minute}`}

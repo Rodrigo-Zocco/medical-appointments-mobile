@@ -17,13 +17,19 @@ export function AppointmentsContainer() {
     fetchAppointments();
   }, []);
 
+  const sortedAppointments = appointments.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateA.getTime() - dateB.getTime();
+  });
+
   return (
     <>
       <Text style={{ marginVertical: 4, fontWeight: "bold", fontSize: 30 }}>
         Listado de turnos:
       </Text>
       <ScrollView contentContainerStyle={{ padding: 16 }}>
-        {appointments.map((appointment) => (
+        {sortedAppointments.map((appointment) => (
           <View key={appointment.id}>
             <AppointmentItem appointment={appointment} />
             <Separator />
