@@ -2,24 +2,34 @@ import { ActionButton } from "@/components/action-button";
 import { AppointmentsContainer } from "@/components/appointments-container";
 import { NextAppointment } from "@/components/next-appointment";
 import { Separator } from "@/components/ui/separator";
+import { Appointment } from "@/constants/types";
+import { fetchUpcomingAppointment } from "@/db/service";
 import { useRouter } from "expo-router";
+import { useEffect, useState } from "react";
 
 export default function Appointments() {
-  const router = useRouter();
+  const [nextAppointment, setNextAppointment] = useState<
+    Appointment | undefined
+  >(undefined);
 
-  // TODO: Should be fetched from DB, the one with the closer positive (not already passed) date.
-  const nextAppointmentMock = {
-    id: 1,
-    date: new Date("2025-04-20T10:30:00"),
-    doctorName: "Dr. Maria López",
-    location: "Clinica Central, Sala 3",
-    name: "Consulta General",
-    additionalInfo: "Llevar estudios anteriores",
-  };
+  useEffect(() => {
+    async function getUpcomingAppointment() {
+      const result = await fetchUpcomingAppointment();
+      if (!result) {
+        setNextAppointment(undefined);
+      } else {
+        setNextAppointment(result);
+      }
+    }
+
+    getUpcomingAppointment();
+  }, []);
+
+  const router = useRouter();
 
   return (
     <>
-      <NextAppointment appointment={nextAppointmentMock} />
+      <NextAppointment appointment={nextAppointment} />
       <Separator />
       <ActionButton
         callback={() => {

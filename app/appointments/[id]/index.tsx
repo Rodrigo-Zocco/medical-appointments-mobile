@@ -2,21 +2,28 @@ import { ActionButton } from "@/components/action-button";
 import AppointmentView from "@/components/appointment-view";
 import { Separator } from "@/components/ui/separator";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { View, Text } from "react-native";
+import { useEffect, useState } from "react";
+import { Appointment as AppointmentType } from "@/constants/types";
+import { deleteAppointment, getAppointment } from "@/db/service";
 
 export default function Appointment() {
+  const [foundAppointment, setFoundAppointment] =
+    useState<AppointmentType | null>(null);
   const router = useRouter();
   const { id } = useLocalSearchParams();
 
-  // TODO: Should load the appointment from DB and return to "/"" if not found.
-  const appointmentMock = {
-    id: 1,
-    date: new Date("2025-04-20T10:30:00"),
-    doctorName: "-",
-    location: "Clinica Central de la mendez, Sala 3",
-    name: "Consulta General",
-    additionalInfo: "-",
-  };
+  useEffect(() => {
+    async function findAppointment() {
+      const appointment = await getAppointment(Number(id));
+
+      if (!appointment) {
+        router.push("/");
+      }
+      setFoundAppointment(appointment);
+    }
+
+    findAppointment();
+  }, []);
 
   return (
     <>
@@ -28,12 +35,15 @@ export default function Appointment() {
         color={"blue"}
       />
       <Separator />
-      <AppointmentView
-        appointment={appointmentMock}
-        onDeleteAppointment={async (id) => {
-          console.log("Should delete appointment with id: ", id);
-        }}
-      />
+      {foundAppointment && (
+        <AppointmentView
+          appointment={foundAppointment}
+          onDeleteAppointment={async (id) => {
+            await deleteAppointment(id);
+            router.push("/");
+          }}
+        />
+      )}
     </>
   );
 }

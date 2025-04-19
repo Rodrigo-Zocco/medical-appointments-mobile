@@ -2,6 +2,7 @@ import { ActionButton } from "@/components/action-button";
 import AppointmentForm from "@/components/appointment-form";
 import { Separator } from "@/components/ui/separator";
 import { Appointment } from "@/constants/types";
+import { createAppointment } from "@/db/service";
 import { useRouter } from "expo-router";
 import { View, SafeAreaView, ScrollView, StyleSheet } from "react-native";
 
@@ -24,10 +25,7 @@ export default function CreateAppointment() {
 
         <AppointmentForm
           onSubmit={async (appointment: Omit<Appointment, "id">) => {
-            // TODO: Should persist a new appointment in db (id is required).
-            console.log("To create: ", appointment);
-
-            await new Promise((r) => setTimeout(r, 1500));
+            await createAppointment(appointment);
             router.push("/");
           }}
         />
