@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "medical-appointments-mobile",
-    "slug": "medical-appointments-mobile",
+    "name": "Mis turnos",
+    "slug": "mis-turnos",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "mis-turnos-app",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -40,3 +40,4 @@
     }
   }
 }
+
