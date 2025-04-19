@@ -13,5 +13,5 @@ export default function RootLayout() {
 }
 
 const styles = StyleSheet.create({
-  contentStyle: { backgroundColor: "#f79d89", padding: 5 },
+  contentStyle: { backgroundColor: "#e0e0e0", padding: 5 },
 });
