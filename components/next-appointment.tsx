@@ -2,6 +2,7 @@ import { Appointment } from "@/constants/types";
 import { View, Text, StyleSheet } from "react-native";
 import { ActionButton } from "./action-button";
 import { useRouter } from "expo-router";
+import { COLORS } from "@/constants/Colors";
 
 // Note: Shouldn't receive an already passed appointment date, or will show negative time left.
 export function NextAppointment({
@@ -47,6 +48,7 @@ export function NextAppointment({
 const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
+    color: COLORS.primary,
     fontSize: 24,
     textAlign: "center",
   },

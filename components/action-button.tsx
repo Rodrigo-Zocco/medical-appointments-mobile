@@ -1,4 +1,4 @@
-import React from "react";
+import { COLORS } from "@/constants/Colors";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 export function ActionButton({
@@ -30,17 +30,17 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   text: {
-    color: "white",
+    color: COLORS.secondary,
     fontSize: 18,
     fontWeight: "bold",
   },
   red: {
-    backgroundColor: "red",
+    backgroundColor: COLORS.error,
   },
   green: {
-    backgroundColor: "green",
+    backgroundColor: COLORS.success,
   },
   blue: {
-    backgroundColor: "blue",
+    backgroundColor: COLORS.extra,
   },
 });

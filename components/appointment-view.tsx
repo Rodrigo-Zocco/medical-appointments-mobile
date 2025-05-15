@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, ScrollView } from "react-native";
 import { Separator } from "./ui/separator";
 import { ActionButton } from "./action-button";
 import { useRouter } from "expo-router";
+import { COLORS } from "@/constants/Colors";
 
 export default function AppointmentView({
   appointment,
@@ -92,18 +93,18 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   card: {
-    backgroundColor: "white",
+    backgroundColor: COLORS.background,
     borderRadius: 10,
     marginBottom: 20,
   },
   header: {
-    backgroundColor: "#007BFF",
+    backgroundColor: COLORS.extra,
     padding: 15,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
   headerText: {
-    color: "white",
+    color: COLORS.secondary,
     fontSize: 25,
     fontWeight: "bold",
     textAlign: "center",

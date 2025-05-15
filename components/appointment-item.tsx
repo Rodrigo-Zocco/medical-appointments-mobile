@@ -2,6 +2,7 @@ import { Appointment } from "@/constants/types";
 import { StyleSheet, View, Text } from "react-native";
 import { ActionButton } from "./action-button";
 import { useRouter } from "expo-router";
+import { COLORS } from "@/constants/Colors";
 
 export function AppointmentItem({ appointment }: { appointment: Appointment }) {
   const router = useRouter();
@@ -43,7 +44,8 @@ export function AppointmentItem({ appointment }: { appointment: Appointment }) {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 15,
-    backgroundColor: "white",
+    borderColor: COLORS.tertiary,
+    borderWidth: 2,
     marginVertical: 10,
     paddingHorizontal: 10,
     paddingVertical: 15,
@@ -51,16 +53,16 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 20,
-    color: "black",
+    color: COLORS.primary,
   },
   subtitle: {
     fontWeight: "bold",
     fontSize: 20,
-    color: "gray",
+    color: COLORS.tertiary,
   },
   warning: {
     fontWeight: "bold",
     fontSize: 20,
-    color: "red",
+    color: COLORS.error,
   },
 });

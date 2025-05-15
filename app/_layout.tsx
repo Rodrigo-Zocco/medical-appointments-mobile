@@ -1,17 +1,21 @@
+import { COLORS } from "@/constants/Colors";
 import { Stack } from "expo-router";
-import { StyleSheet } from "react-native";
+import { StatusBar, StyleSheet } from "react-native";
 
 export default function RootLayout() {
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-        contentStyle: styles.contentStyle,
-      }}
-    />
+    <>
+      <StatusBar barStyle={"dark-content"} />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: styles.contentStyle,
+        }}
+      />
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  contentStyle: { backgroundColor: "#e0e0e0", padding: 5 },
+  contentStyle: { backgroundColor: COLORS.background, padding: 5 },
 });

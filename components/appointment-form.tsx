@@ -1,3 +1,4 @@
+import { COLORS } from "@/constants/Colors";
 import { Appointment } from "@/constants/types";
 import { useState } from "react";
 import {
@@ -396,7 +397,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: COLORS.tertiary,
     borderRadius: 4,
     padding: 10,
     fontSize: 16,
@@ -407,19 +408,19 @@ const styles = StyleSheet.create({
   },
   datePickerButton: {
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: COLORS.tertiary,
     borderRadius: 4,
     padding: 10,
     fontSize: 16,
   },
   errorText: {
-    color: "red",
+    color: COLORS.error,
     fontWeight: "bold",
     fontSize: 14,
     marginTop: 4,
   },
   submitButton: {
-    backgroundColor: "green",
+    backgroundColor: COLORS.success,
     padding: 15,
     borderRadius: 4,
     alignItems: "center",
@@ -427,7 +428,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   submitButtonText: {
-    color: "white",
+    color: COLORS.secondary,
     fontSize: 16,
     fontWeight: "bold",
   },
@@ -438,7 +439,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   modalContent: {
-    backgroundColor: "white",
+    backgroundColor: COLORS.background,
     borderRadius: 10,
     paddingVertical: 15,
     paddingHorizontal: 0,
@@ -471,13 +472,13 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   pickerItemSelected: {
-    backgroundColor: "#007BFF",
+    backgroundColor: COLORS.extra,
   },
   pickerItemText: {
     fontSize: 16,
   },
   pickerItemTextSelected: {
-    color: "white",
+    color: COLORS.secondary,
     fontWeight: "bold",
   },
   modalButtons: {
@@ -493,13 +494,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   cancelButton: {
-    backgroundColor: "red",
+    backgroundColor: COLORS.error,
   },
   confirmButton: {
-    backgroundColor: "green",
+    backgroundColor: COLORS.success,
   },
   modalButtonText: {
-    color: "white",
+    color: COLORS.secondary,
     fontWeight: "bold",
   },
 });

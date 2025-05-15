@@ -1,3 +1,4 @@
+import { COLORS } from "@/constants/Colors";
 import { View, StyleSheet } from "react-native";
 
 export function Separator() {
@@ -7,7 +8,7 @@ export function Separator() {
 const styles = StyleSheet.create({
   separator: {
     height: 1,
-    backgroundColor: "rgb(0, 0, 0)",
+    backgroundColor: COLORS.tertiary,
     marginVertical: 10,
   },
 });
